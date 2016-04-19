@@ -9730,3 +9730,77 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+body {
+  background-color: #11c1f3; }
+  body main {
+    font-size: 16px; }
+    body main section.welcome {
+      font-size: 4em;
+      margin-top: -1em;
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      width: 100%; }
+      body main section.welcome label {
+        /* FF 4-18 */
+        /* FF 19+ */
+        /* IE 10+ */ }
+        body main section.welcome label input.override[type="text"] {
+          background-color: transparent;
+          border: none;
+          color: white;
+          display: initial;
+          font-size: 3rem;
+          height: inherit;
+          line-height: initial;
+          outline: none;
+          text-align: center; }
+        body main section.welcome label input[type="text"]:focus::-webkit-input-placeholder {
+          color: transparent; }
+        body main section.welcome label input[type="text"]:focus:-moz-placeholder {
+          color: transparent; }
+        body main section.welcome label input[type="text"]:focus::-moz-placeholder {
+          color: transparent; }
+        body main section.welcome label input[type="text"]:focus:-ms-input-placeholder {
+          color: transparent; }
+
+.blinking-cursor {
+  font-weight: 100;
+  font-size: 30px;
+  color: #2E3D48;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite; }
+
+@keyframes "blink" {
+  from, to {
+    color: transparent; }
+  50% {
+    color: black; } }
+
+@-moz-keyframes blink {
+  from, to {
+    color: transparent; }
+  50% {
+    color: black; } }
+
+@-webkit-keyframes "blink" {
+  from, to {
+    color: transparent; }
+  50% {
+    color: black; } }
+
+@-ms-keyframes "blink" {
+  from, to {
+    color: transparent; }
+  50% {
+    color: black; } }
+
+@-o-keyframes "blink" {
+  from, to {
+    color: transparent; }
+  50% {
+    color: black; } }
