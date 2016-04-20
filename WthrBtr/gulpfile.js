@@ -6,6 +6,7 @@ var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
+var browserSync = require('browser-sync').create();
 
 var paths = {
   sass: ['./scss/**/*.scss']
@@ -13,7 +14,7 @@ var paths = {
 
 gulp.task('default', ['sass']);
 
-gulp.task('sass', function(done) {
+gulp.task('sass', function() {
   gulp.src('./scss/ionic.app.scss')
     .pipe(sass())
     .on('error', sass.logError)
@@ -23,11 +24,15 @@ gulp.task('sass', function(done) {
     }))
     .pipe(rename({ extname: '.min.css' }))
     .pipe(gulp.dest('./www/css/'))
-    .on('end', done);
+    .pipe(browserSync.reload({
+      stream: true
+    }));
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', ['browserSync', 'sass'],function() {
   gulp.watch(paths.sass, ['sass']);
+  gulp.watch('./*.html', browserSync.reload);
+  gulp.watch('./**/*.{html,js}', browserSync.reload);
 });
 
 gulp.task('install', ['git-check'], function() {
@@ -35,6 +40,16 @@ gulp.task('install', ['git-check'], function() {
     .on('log', function(data) {
       gutil.log('bower', gutil.colors.cyan(data.id), data.message);
     });
+});
+
+gulp.task('browserSync', function(){
+  browserSync.init({
+    server: { 
+    // I really don't want this to be a local path
+    //TODO: Find out how to make it better
+      baseDir: '/home/patrick/code/WthrBtr/WthrBtr/www/'
+    }
+  })
 });
 
 gulp.task('git-check', function(done) {
