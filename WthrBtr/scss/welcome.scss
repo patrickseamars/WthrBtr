@@ -1,0 +1,30 @@
+section.welcome{
+			font-size: 1em;
+			line-height: initial;
+			margin-top: -1em;
+			position: absolute;
+			text-align: center;
+			top: 33%;
+			width: 100%;
+			div{
+				label{
+					input.override[type="text"]{
+						background-color: transparent;
+						border: none;
+						border-bottom: 2px solid #46494A;
+						color: white;
+						display: initial;
+						font-size: 2em;
+						height: inherit;
+						line-height: initial;
+						outline: none;
+						text-align: center;
+						width: 70%;
+					}
+					input[type="text"]:focus::-webkit-input-placeholder { color:transparent; }
+					input[type="text"]:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+					input[type="text"]:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+					input[type="text"]:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+				}
+			}
+		}
