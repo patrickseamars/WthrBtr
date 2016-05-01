@@ -6,12 +6,15 @@
 		<title>WthrBtr</title>
 		<!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above -->
 		<link href="./css/ionic.app.min.css" rel="stylesheet">
+		<!-- <link href="./lib/ionicons/css/ionicons.css" rel="stylesheet -->">
 	</head>
 	<body>
 		<ion-header-bar class="bar-dark">
 			<h1 class="title" align="center">WthrBtr</h1>
+			<button class="button button-icon" ng-click="openMenuModal()">
+            <i class="icon ion-navicon"></i>
+        </button>
 		</ion-header-bar>
-s
 		<main ng-view></main>
 	</body>
 	<!-- ionic/angularjs js -->
