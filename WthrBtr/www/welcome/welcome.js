@@ -8,5 +8,5 @@ angular.module('wthrBtr.welcome', ['ngRoute'])
     });
 }])
 .controller('WelcomeCtrl', [function(){
-
+	console.log('heeeellllleo')
 }]);

@@ -4,7 +4,8 @@ var app = angular.module('wthrBtr', [
 	'ionic',
 	'ngRoute',
 	'LocalStorageModule',
-	'wthrBtr.welcome'
+	'wthrBtr.welcome',
+	'wthrBtr.weather'
 	]);
 app.run(function($ionicPlatform) {
 	$ionicPlatform.ready(function() {
@@ -26,7 +27,10 @@ app.run(function($ionicPlatform) {
 
 app.config(['$routeProvider', function($routeProvider){
 	// Default view is Welcome
-	$routeProvider.otherwise({
+	$routeProvider.when('/weather',{
+		templateUrl: '../weather/weather.view.html'
+	})
+	.otherwise({
 		redirectTo: '/welcome'
 	});
 }]);

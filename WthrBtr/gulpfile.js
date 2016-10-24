@@ -47,7 +47,7 @@ gulp.task('browserSync', function(){
     server: { 
     // I really don't want this to be a local path
     //TODO: Find out how to make it better
-      baseDir: '/home/patrick/code/WthrBtr/WthrBtr/www/'
+      baseDir: '/Users/Patrick/code/WthrBtr/WthrBtr/www/'
     }
   })
 });
